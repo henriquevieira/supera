@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+    </div>
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+      <a href="{% url 'project:want_reader' 0 %}">
+        <img src="{% static "images/read-369040_640.jpg" %}" alt="Writer" width="100%" />
+      </a>
+      <h1 align='center'> <a href="{% url 'project:want_reader' 0 %}">QUERO SER UM DIÁRIO</a> </h1>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+    </div>
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+      <a href="{% url 'project:want_writer' %}">
+        <img src="{% static "images/writing-923882_640.jpg" %}" alt="Writer" width="100%" />
+      </a>
+      <h1 align='center'> <a href="{% url 'project:want_writer' %}">QUERO UM DIÁRIO</a> </h1>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-lg-4">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

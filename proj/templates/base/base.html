@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--<link rel="icon" href="../../favicon.ico">-->
+
+        <title> Supera </title>
+
+        {% load static %}
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+        <!-- jquery -->
+        <script type="text/javascript" src="{% static 'jquery-ui-1.12.1/jquery-ui.js' %}"></script>
+
+        <!-- Bootstrap JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'project:index' %}"> Supera </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                  <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> About </a>
+                </li> -->
+              </ul>
+              <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" placeholder="Search" type="text">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+              <div class="form-inline my-2 my-lg-0">
+                <!-- <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-bell"></span> <span class="badge"> {{ notifications }} </span> </a>
+                    <ul class="dropdown-menu"> -->
+                      <!-- <li><a href="{#% url 'upperbag:stock_list' %#}">  </a></li> -->
+                      <!-- <li><a href="#"> No notifications available.</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{#% url 'upperbag:user_profile' #%}"> Hello USER </a></li>
+                  <li><a href="{#% url 'upperbag:user_logout' #%}"> logout <span class="glyphicon  glyphicon-log-in"></span></a></li>
+                </ul> -->
+                USER
+              </div>
+            </div>
+          </nav>
+
+          {% block content %}
+          {% endblock %}
+
+        </div>
+
+        {% block javascript %}
+        {% endblock %}
+
+    </body>
+
+</html>

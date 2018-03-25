@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+
+<div class="loginmodal-container">
+	<h1>Login </h1><br>
+	<form action="{% url 'project:user_login' %}" method="post"  id="login_form">
+		{% csrf_token %}
+		<input name="username" type="text" placeholder="UserName" class="form-control">
+		<input name="password" type="password" placeholder="Password" class="form-control">
+        <input name="next" type="hidden" value="{{ next }}">
+		<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+	</form>
+
+	<div class="login-help">
+		<a href="#">Forgot Password</a>
+	</div>
+</div>
+
+
+{% endblock %}

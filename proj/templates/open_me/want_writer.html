@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-lg-2">
+    </div>
+    <div class="col-xs-8 col-sm-8 col-lg-8">
+      <form class="" action="{% url 'project:want_writer' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <h3>Vamos escrever!?</h3>
+        </div>
+        <div class="form-group">
+          <!-- <label for="InputTextArea"> Vamos escrever!? </label> -->
+          <textarea class="form-control" id="InputTextArea" name="InputTextArea" rows="15" style="resize: none;" placehold="Escreva o que sente" > </textarea>
+          <!-- <input class="form-control" id="input_answer" name="input_answer" placeholder="Escreva o que sente" type="text">
+          <small id="emailHelp" class="form-text text-muted">Escreva uma resposta.</small> -->
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <img src="{% static "images/emoji/happy.png" %}" alt="Writer" width="5%" />
+          <img src="{% static "images/emoji/cool.png" %}" alt="Writer" width="5%" />
+          <img src="{% static "images/emoji/sad.png" %}" alt="Writer" width="5%" />
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-lg-2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
