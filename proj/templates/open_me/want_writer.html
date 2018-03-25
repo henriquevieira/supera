@@ -44,8 +44,10 @@
           <div class="card-header"> {{text.date_created}} </div>
         <div class="card-body">
           <h4 class="card-title"> {{text.text}} </h4>
-          <!-- <p class="card-text">  </p> -->
-          <input class="form-control" id="input_answer" name="input_answer" placeholder="Escreva uma resposta." type="text">
+          {% for answer in text.get_answers %}
+            <p class="card-text"> {{answer.answer}} </p>
+          {% endfor %}
+          <!-- <input class="form-control" id="input_answer" name="input_answer" placeholder="Escreva uma resposta." type="text"> -->
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Submit</button>
