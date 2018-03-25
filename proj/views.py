@@ -35,19 +35,27 @@ def want_reader(request, user_id):
 
 def want_reader_save_answer(request, text_id):
 
+    user = request.user
+    context = {'user':user, }
+
+    diaries = md.User.objects.filter(is_superuser=False)
+    context.update({'diaries':diaries})
+
     text = md.My_text.objects.get(id=text_id)
 
     if request.POST:
         answer = md.My_answer()
         answer.user = md.User.objects.all()[1]
         answer.date_created = datetime.now()
-        answer.text.add(text)
         answer.save()
+        answer.text.add(text)
+
+    return render(request, 'open_me/want_reader.html', context)
 
 def want_writer(request):
     user = request.user
 
-    my_old_text = md.My_text.objects.all()
+    texts = md.My_text.objects.all()
     context = {'user':user,}
 
     if request.POST:
@@ -60,10 +68,6 @@ def want_writer(request):
         my_text.text = request.POST['InputTextArea']
         my_text.save()
 
-    complete_text = ""
-    for text in my_old_text:
-        complete_text += str(text.date_created.strftime("%B-%d-%Y %H:%M")) + " " + text.text + "\n --------- \n"
-
-    context.update({'complete_text':complete_text})
+    context.update({'texts':texts})
 
     return render(request, 'open_me/want_writer.html', context)
