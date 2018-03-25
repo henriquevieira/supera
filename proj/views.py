@@ -47,6 +47,7 @@ def want_reader_save_answer(request, text_id):
         answer = md.My_answer()
         answer.user = md.User.objects.all()[1]
         answer.date_created = datetime.now()
+        answer.answer = request.POST['input_answer']
         answer.save()
         answer.text.add(text)
 
